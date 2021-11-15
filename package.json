@@ -3,12 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --host 127.0.0.1",
+    "start": "ng serve --host 127.0.0.1 --proxy-config src/proxy.config.json",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
-
   "private": true,
   "dependencies": {
     "@angular/animations": "~12.2.0",
@@ -24,6 +23,7 @@
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
     "@ng-bootstrap/ng-bootstrap": "^10.0.0",
+    "ajax": "0.0.4",
     "bootstrap": "^4.6.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
