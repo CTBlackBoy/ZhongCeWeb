@@ -1,7 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+  <a class="navbar-brand" href="#">
+    <img src="././assets/logo.png">
+    缺数码
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto nav-tabs">
+      <li class="nav-item active" *ngFor="let link of links">
+        <a class="nav-link" [routerLink]="link.routerlink" [fragment]="link.fragment">{{ link.title }} <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
 <div class="album py-5 bg-light">
   <div class="container">
     <div class="row">
-      <div class="col-md-6" *ngFor="let article of Articles">
+      <div class="col-md-6" *ngFor="let mes of MesArt">
         <div class="card mb-3" style="max-width: 580px;">
           <div class="row no-gutters">
             <div class="col-md-4">
@@ -9,9 +31,9 @@
             </div>
             <div class="col-md-8">
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h5 class="card-title">{{ mes['title'] }}</h5>
                 <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                <p class="card-text"><small class="text-muted">{{ mes['time'] }}</small></p>
               </div>
             </div>
           </div>

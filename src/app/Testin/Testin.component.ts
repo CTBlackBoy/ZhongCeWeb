@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {UserTestin} from "../user.testin";
 
 @Component({
   selector: 'app-testin',
@@ -7,46 +8,44 @@ import { Component, OnInit } from '@angular/core';
 
 })
 export class TestinComponent implements OnInit {
-  Products = [
-    {},
-    {},
-    {},
-    {},
-    {},
-    {},
-  ]
-  constructor() { }
-  ngOnInit(): void {
-    // var leftBottom = document.getElementById("leftChange")
-    // var rightBottom = document.getElementById("rightChange")
-    // var banner = document.getElementById("banner")
-    // // @ts-ignore
-    // leftBottom.addEventListener("click", function (event) {
-    //   // @ts-ignore
-    //   banner.style.left = (String(parseInt((banner.style.left).slice(0,-1)) - 100)+'%');
-    //   // @ts-ignore
-    //   banner.style.transition = '2s'
-    //
-    //   // @ts-ignore
-    //   if(banner.style.left == "-400%") {
-    //     // @ts-ignore
-    //     banner.style.left = "0%"
-    //   }
-    // },false)
-    // // @ts-ignore
-    // rightBottom.addEventListener("click", function (event) {
-    //   // @ts-ignore
-    //   banner.style.left = (String(parseInt((banner.style.left).slice(0,-1)) + 100)+'%');
-    //   // @ts-ignore
-    //   banner.style.transition = '2s'
-    //
-    //   // @ts-ignore
-    //   if(banner.style.left == "100%") {
-    //     // @ts-ignore
-    //     banner.style.left = "-300%"
-    //   }
-    // },false)
+  links = [
+    { title: '首页', fragment: 'index', routerlink: '/Main'  },
+    { title: '专题报道', fragment: 'report', routerlink: '/Report'},
+    { title: '行业资讯', fragment: 'Information', routerlink: '/Information'},
+    { title: '产品评测', fragment: 'Article',  routerlink: '/Article'},
+    { title: '众测申请', fragment: 'testin',  routerlink: '/Testin'},
+    { title: '联系方式', fragment: 'relation',  routerlink: '/Relation'},
+  ];
 
+
+  Tes = {
+  }
+  MesTes = []
+  constructor(
+    public userTestin: UserTestin
+  ) {
+
+  }
+  ngOnInit(): void {
+    this.userTestin.getTestin().subscribe(res => {
+      // @ts-ignore
+      // for (let i = 0; i < res['ArticleR'].length; i++) {
+      //
+      //   // @ts-ignore
+      //   for (const resKey in res['ArticleR'][i]) {
+      //     // @ts-ignore
+      //     // this.Art.push(res['ArticleR'][resKey])
+      //     this.Mes[String(resKey)] = String(res['ArticleR'][i][resKey])
+      //   }
+      //   // @ts-ignore
+      //   this.Art.push(this.Mes)
+      //   // @ts-ignore
+      //   this.Art = {}
+      // }
+
+
+      console.log(this.MesTes)
+    });
   }
 
 }

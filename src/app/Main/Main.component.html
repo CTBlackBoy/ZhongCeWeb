@@ -1,3 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+  <a class="navbar-brand" href="#">
+    <img src="././assets/logo.png">
+    缺数码
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto nav-tabs">
+      <li class="nav-item active" *ngFor="let link of links">
+        <a class="nav-link" [routerLink]="link.routerlink" [fragment]="link.fragment">{{ link.title }} <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
+
 <div style="margin: 16px 16px 0 16px" ngStyle.lt-sm="margin:0px;">
   <div fxLayout="row" ngclass="header-heigh" style="background-color: #f8f9fa;position:relative;overflow: hidden;" >
     <div class="header-heigh" fxFlex="33.3"fxHide.lt-md style="position: relative;z-index: 2;">
@@ -14,43 +36,51 @@
   </div>
 </div>
 <div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" style="padding:0 8px" ngStyle.lt-sm="padding:0px">
-  <div fxFlex="auto" fxLayout="column" class="example-card" style="background-color: #343a40;margin:8px;height: 480px" ngStyle.lt-sm="margin:0px;height: 400px">
+  <div fxFlex="auto" fxLayout="column" style="background-color: #343a40;margin:8px;height: 480px" ngStyle.lt-sm="margin:0px;height: 400px">
     <div fxFlex="30" fxLayout="column" fxLayoutAlign="center center">
       <!--      <div mat-card-avatar class="example-header-image"></div>-->
       <h2  style="color: #fff">专题报道</h2>
       <br>
       <p style="color: #fff">Project information</p>
     </div>
-    <div fxFlex="70" fxLayoutAlign="center" style="background-color: #fff;margin:0 15%;border-radius: 20px 20px 0 0"></div>
+    <div fxFlex="70" fxLayoutAlign="center" fxLayout="column" style="background-color: #fff;margin:0 15%;border-radius: 20px 20px 0 0">
+      <p *ngFor="let Mes of Inf" style="color: black">{{ Mes['title'] }}</p>
+    </div>
   </div>
-  <div fxFlex="auto" fxLayout="column" class="example-card" style="margin:8px;background-color: #fff;height: 480px" ngStyle.lt-sm="margin:0px;height: 400px">
+  <div fxFlex="auto" fxLayout="column" style="margin:8px;background-color: #fff;height: 480px" ngStyle.lt-sm="margin:0px;height: 400px">
     <div fxFlex="30" fxLayout="column" fxLayoutAlign="center center">
       <div mat-card-avatar class="example-header-image"></div>
       <h2  style="color: #000">行业资讯</h2>
       <br>
       <p style="color: #000">Industry information</p>
     </div>
-    <div fxFlex="70" fxLayoutAlign="center" style="background-color: #343a40;margin:0 15%;border-radius: 20px 20px 0 0"></div>
+    <div fxFlex="70" fxLayoutAlign="center" fxLayout="column" style="background-color: #343a40;margin:0 15%;border-radius: 20px 20px 0 0">
+      <p *ngFor="let Mes of Inf" style="color: white">{{ Mes['title'] }}</p>
+    </div>
   </div>
 </div>
-<div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" style="padding: 0 8px" ngStyle.lt-sm="padding:0px">
-  <div fxFlex="auto" fxLayout="column" class="example-card" style="margin:8px;background-color: #ffffff;height: 480px" ngStyle.lt-sm="margin:0px;height: 400px">
+<div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column" style="padding:0 8px" ngStyle.lt-sm="padding:0px">
+  <div fxFlex="auto" fxLayout="column" style="margin:8px;background-color: #fff;height: 480px" ngStyle.lt-sm="margin:0px;height: 400px">
     <div fxFlex="30" fxLayout="column" fxLayoutAlign="center center">
       <div mat-card-avatar class="example-header-image"></div>
       <h2  style="color: #000">产品评测</h2>
       <br>
-      <p style="color: #000">Product review</p>
+      <p style="color: #000">Industry information</p>
     </div>
-    <div fxFlex="70" fxLayoutAlign="center" style="background-color: #343a40;margin:0 15%;border-radius: 20px 20px 0 0"></div>
+    <div fxFlex="70" fxLayoutAlign="center" fxLayout="column" style="background-color: #343a40;margin:0 15%;border-radius: 20px 20px 0 0">
+      <p *ngFor="let mes of Art" fxLayoutAlign="center" style="float: left;color: white">{{ mes['title'] }}</p>
+    </div>
   </div>
-  <div fxFlex="auto" fxLayout="column"  style="margin:8px;background-color: #343a40;height: 480px" ngStyle.lt-sm="margin:0px;height: 400px">
+  <div fxFlex="auto" fxLayout="column" style="background-color: #343a40;margin:8px;height: 480px" ngStyle.lt-sm="margin:0px;height: 400px">
     <div fxFlex="30" fxLayout="column" fxLayoutAlign="center center">
-      <div mat-card-avatar class="example-header-image"></div>
-      <h2  style="color: #ffffff">众测申请</h2>
+      <!--      <div mat-card-avatar class="example-header-image"></div>-->
+      <h2  style="color: #fff">众测申请</h2>
       <br>
-      <p style="color: #ffffff">Test application</p>
+      <p style="color: #fff">Project information</p>
     </div>
-    <div fxFlex="70" fxLayoutAlign="center" style="background-color: #ffffff;margin:0 15%;border-radius: 20px 20px 0 0"></div>
+    <div fxFlex="70" fxLayoutAlign="center" fxLayout="column" style="background-color: #fff;margin:0 15%;border-radius: 20px 20px 0 0">
+      <p *ngFor="let mes of Tes" fxLayoutAlign="center" style="float: left;color: black">{{ mes['title'] }}</p>
+    </div>
   </div>
 </div>
 <div fxLayout="row" fxLayoutAlign="center center" class="footer" ngStyle.lt-sm="height: 400px">

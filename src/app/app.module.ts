@@ -18,6 +18,10 @@ import { RelationComponent } from './Relation/Relation.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from "@angular/material/card";
 import { AllarticleComponent } from './allarticle/allarticle.component';
+import {HttpClientModule} from "@angular/common/http";
+import { AdminComponent } from './Admin/Admin.component';
+import { AdminRegisterComponent } from './admin-register/Admin-register.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -30,19 +34,24 @@ import { AllarticleComponent } from './allarticle/allarticle.component';
     ArticleComponent,
     TestinComponent,
     RelationComponent,
-    AllarticleComponent
+    AllarticleComponent,
+    AdminComponent,
+    AdminRegisterComponent
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    NgbPaginationModule,
-    NgbAlertModule,
-    NgbModule,
-    MatGridListModule,
-    BrowserAnimationsModule,
-    MatCardModule,
-    FlexLayoutModule,
-  ],
+    imports: [
+        BrowserModule,
+        // import HttpClientModule after BrowserModule.
+        HttpClientModule,
+        AppRoutingModule,
+        NgbPaginationModule,
+        NgbAlertModule,
+        NgbModule,
+        MatGridListModule,
+        BrowserAnimationsModule,
+        MatCardModule,
+        FlexLayoutModule,
+        ReactiveFormsModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

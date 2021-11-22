@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {RouterModule, Routes } from '@angular/router';
 import {MainComponet} from "./Main/Main.component";
-import { ReportComponent } from "./Report/Report.component";
+import {ReportComponent } from "./Report/Report.component";
 import {InformationComponent} from "./Information/Information.component";
 import {ArticleComponent} from "./Article/Article.component";
 import {TestinComponent} from "./Testin/Testin.component";
 import {RelationComponent} from "./Relation/Relation.component";
+import {AdminComponent} from "./Admin/Admin.component";
+import {AdminRegisterComponent} from "./admin-register/Admin-register.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/Main', pathMatch: 'full' },
@@ -15,6 +17,8 @@ const routes: Routes = [
   { path: 'Article', component: ArticleComponent },
   { path: 'Testin', component: TestinComponent },
   { path: 'Relation', component: RelationComponent },
+  { path: 'Admin', component: AdminComponent },
+  { path: 'Admin-register', component: AdminRegisterComponent},
 ];
 
 @NgModule({
