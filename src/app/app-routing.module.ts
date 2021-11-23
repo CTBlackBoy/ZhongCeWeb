@@ -7,7 +7,8 @@ import {ArticleComponent} from "./Article/Article.component";
 import {TestinComponent} from "./Testin/Testin.component";
 import {RelationComponent} from "./Relation/Relation.component";
 import {AdminComponent} from "./Admin/Admin.component";
-import {AdminRegisterComponent} from "./admin-register/Admin-register.component";
+import {UserRegisterComponent} from "./User-register/User-register.component";
+import {UserLoginComponent} from "./User-login/User-login.component";
 
 const routes: Routes = [
   { path: '', redirectTo: '/Main', pathMatch: 'full' },
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'Testin', component: TestinComponent },
   { path: 'Relation', component: RelationComponent },
   { path: 'Admin', component: AdminComponent },
-  { path: 'Admin-register', component: AdminRegisterComponent},
+  { path: 'User-register', component: UserRegisterComponent},
+  { path: 'User-login', component: UserLoginComponent},
 ];
 
 @NgModule({

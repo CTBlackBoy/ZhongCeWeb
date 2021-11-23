@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Message} from "@angular/compiler/src/i18n/i18n_ast";
-import {getMaxNumberOfWorkers} from "@angular/compiler-cli/ngcc/src/ngcc_options";
 import {UserArticle} from "../user.article";
 
 @Component({
@@ -30,6 +28,7 @@ export class ArticleComponent implements OnInit {
   ngOnInit(): void {
     // @ts-ignore
     this.userArticle.getArticle().subscribe(res => {
+      console.log(res)
       // @ts-ignore
       for (let i = 0; i < res['ArticleR'].length; i++) {
         // @ts-ignore
@@ -45,7 +44,7 @@ export class ArticleComponent implements OnInit {
       }
 
 
-      console.log(this.MesArt)
+      // console.log(this.MesArt)
     });
   }
 

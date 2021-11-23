@@ -1,0 +1,21 @@
+<div style="max-width: 50%;min-width: 300px;margin: 40px auto;padding: 30px;border:black 4px solid;border-radius: 5px;box-shadow:10px 10px 5px rosybrown">
+  <h1 style="text-align: center">注册</h1>
+  <form class="" >
+    <div class="form-group align-middle">
+      <label for="exampleInputEmail1">EMAIL ADDRESS</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="email"  name="email" autocomplete >
+      <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group align-middle">
+      <label for="exampleInputEmail1">CREATE NAME</label>
+      <input type="email" class="form-control"  aria-describedby="emailHelp" [(ngModel)]="auther" name="auther" autocomplete >
+      <small class="form-text text-muted">We'll never share your email with anyone else.</small>
+    </div>
+    <div class="form-group align-middle">
+      <label for="exampleInputPassword1">PASSWORD</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="password" name="password" autocomplete >
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="UserAdd()">Submit</button>
+  </form>
+</div>
+

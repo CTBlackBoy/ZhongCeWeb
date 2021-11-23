@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 
 import {NgbPaginationModule, NgbAlertModule, NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { MainComponet } from './Main/Main.component';
-import { TopMenuComponent } from './topMenu/topMenu.component';
 import { ReportComponent } from './Report/Report.component';
 import {InformationComponent} from "./Information/Information.component";
 import { ArticleComponent } from './Article/Article.component';
@@ -20,15 +19,15 @@ import {MatCardModule} from "@angular/material/card";
 import { AllarticleComponent } from './allarticle/allarticle.component';
 import {HttpClientModule} from "@angular/common/http";
 import { AdminComponent } from './Admin/Admin.component';
-import { AdminRegisterComponent } from './admin-register/Admin-register.component';
-import {ReactiveFormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {UserRegisterComponent} from "./User-register/User-register.component";
+import {UserLoginComponent} from "./User-login/User-login.component";
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponet,
-    TopMenuComponent,
     ReportComponent,
     InformationComponent,
     ArticleComponent,
@@ -36,22 +35,24 @@ import {ReactiveFormsModule} from "@angular/forms";
     RelationComponent,
     AllarticleComponent,
     AdminComponent,
-    AdminRegisterComponent
+    UserRegisterComponent,
+    UserLoginComponent
   ],
-    imports: [
-        BrowserModule,
-        // import HttpClientModule after BrowserModule.
-        HttpClientModule,
-        AppRoutingModule,
-        NgbPaginationModule,
-        NgbAlertModule,
-        NgbModule,
-        MatGridListModule,
-        BrowserAnimationsModule,
-        MatCardModule,
-        FlexLayoutModule,
-        ReactiveFormsModule,
-    ],
+  imports: [
+    BrowserModule,
+    // import HttpClientModule after BrowserModule.
+    HttpClientModule,
+    AppRoutingModule,
+    NgbPaginationModule,
+    NgbAlertModule,
+    NgbModule,
+    MatGridListModule,
+    BrowserAnimationsModule,
+    MatCardModule,
+    FlexLayoutModule,
+    ReactiveFormsModule,
+    FormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
